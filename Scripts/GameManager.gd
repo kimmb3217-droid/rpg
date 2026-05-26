@@ -39,8 +39,7 @@ func start_new_character(slot_index: int):
 
 # 사망 시 호출
 func on_player_died():
-	# 부활/포기 선택 UI를 띄우도록 시그널이나 씬 호출
-	pass
+	get_tree().change_scene_to_file("res://Scenes/DeathUI.tscn")
 
 # 부활 처리
 func revive_player(cost: int):

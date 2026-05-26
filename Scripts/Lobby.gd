@@ -1,10 +1,9 @@
 extends Control
 
 func _ready():
-	# UI 로드 후 각 슬롯 버튼에 데이터 표시 (생략 가능)
 	print("Lobby loaded. Total Currency: ", GameManager.total_currency)
 
-func _on_slot_pressed(index: int):
+func _process_slot(index: int):
 	print("Slot selected: ", index)
 	var slot = GameManager.slots[index]
 	if not slot["is_active"]:
@@ -14,5 +13,10 @@ func _on_slot_pressed(index: int):
 		print("Loading existing character in slot ", index)
 		GameManager.current_slot_index = index
 	
-	# 게임 메인 씬으로 전환
 	get_tree().change_scene_to_file("res://Scenes/MainLevel.tscn")
+
+func _on_slot_0_pressed(): _process_slot(0)
+func _on_slot_1_pressed(): _process_slot(1)
+func _on_slot_2_pressed(): _process_slot(2)
+func _on_slot_3_pressed(): _process_slot(3)
+func _on_slot_4_pressed(): _process_slot(4)

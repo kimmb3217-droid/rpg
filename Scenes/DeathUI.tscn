@@ -1,4 +1,4 @@
-[gd_scene load_steps=2 format=3 uid="uid://x7y8z9a0b1c2"]
+[gd_scene format=3 uid="uid://x7y81aa0b1c2"]
 
 [ext_resource type="Script" path="res://Scripts/DeathUI.gd" id="1_d2e3f"]
 
