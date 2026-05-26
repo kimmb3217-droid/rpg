@@ -1,0 +1,67 @@
+[gd_scene load_steps=2 format=3 uid="uid://x7y8z9a0b1c2"]
+
+[ext_resource type="Script" path="res://Scripts/DeathUI.gd" id="1_d2e3f"]
+
+[node name="DeathUI" type="CanvasLayer"]
+script = ExtResource("1_d2e3f")
+
+[node name="Panel" type="Panel" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -150.0
+offset_top = -100.0
+offset_right = 150.0
+offset_bottom = 100.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Title" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -40.0
+offset_top = 20.0
+offset_right = 40.0
+offset_bottom = 43.0
+grow_horizontal = 2
+text = "YOU DIED"
+horizontal_alignment = 1
+
+[node name="CostLabel" type="Label" parent="Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -60.0
+offset_top = -20.0
+offset_right = 60.0
+offset_bottom = 3.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Revive Cost: 50"
+horizontal_alignment = 1
+
+[node name="BtnRevive" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = 30.0
+offset_top = 130.0
+offset_right = 110.0
+offset_bottom = 161.0
+text = "Revive"
+
+[node name="BtnGiveUp" type="Button" parent="Panel"]
+layout_mode = 0
+offset_left = 180.0
+offset_top = 130.0
+offset_right = 260.0
+offset_bottom = 161.0
+text = "Give Up"
+
+[connection signal="pressed" from="Panel/BtnRevive" to="." method="_on_revive_pressed"]
+[connection signal="pressed" from="Panel/BtnGiveUp" to="." method="_on_give_up_pressed"]
