@@ -1,12 +1,19 @@
 [gd_scene load_steps=4 format=3 uid="uid://m1a2i3n4l5e6"]
 
 [ext_resource type="PackedScene" uid="uid://cf67d2k0tqq8b" path="res://Scenes/Player.tscn" id="1_a1b1"]
-[ext_resource type="PackedScene" uid="uid://e4x1a2b3c4d5" path="res://UI/MobileUI.tscn" id="2_c2d2"]
+[ext_resource type="PackedScene" uid="uid://h1u2d3h4u5d6" path="res://Scenes/HUD.tscn" id="2_h1u2d"]
 [ext_resource type="PackedScene" uid="uid://b1c2d3e4f5g6" path="res://Scenes/Enemy.tscn" id="3_e3f3"]
 
 [node name="MainLevel" type="Node2D"]
 
-[node name="MobileUI" parent="." instance=ExtResource("2_c2d2")]
+[node name="Background" type="ColorRect" parent="."]
+offset_left = -1000.0
+offset_top = -1000.0
+offset_right = 2000.0
+offset_bottom = 2000.0
+color = Color(0.12, 0.12, 0.12, 1)
+
+[node name="HUD" parent="." instance=ExtResource("2_h1u2d")]
 
 [node name="Player" parent="." instance=ExtResource("1_a1b1")]
 position = Vector2(320, 180)
